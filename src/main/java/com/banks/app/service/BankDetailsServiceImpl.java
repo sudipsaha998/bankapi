@@ -21,13 +21,13 @@ public class BankDetailsServiceImpl implements BankDetailsService {
 	@Override
 	public List<BankBranches> getBranchDetails(String name, String city, long offset, long limit) {
 		// TODO Auto-generated method stub
-		return bankDetailsRepository.findByNameAndCity(name, city, offset, limit);
+		return bankDetailsRepository.findByNameAndCity(name.toUpperCase(), city.toUpperCase(), offset, limit);
 	}
 
 	@Override
 	public BankBranches getBankDetails(String ifsc, long offset, long limit) {
 		// TODO Auto-generated method stub
-		return bankDetailsRepository.findByIfsc(ifsc, offset, limit);
+		return bankDetailsRepository.findByIfsc(ifsc.toUpperCase(), offset, limit);
 	}
 	
 	
