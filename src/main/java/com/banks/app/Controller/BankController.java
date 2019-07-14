@@ -30,11 +30,11 @@ public class BankController {
 		String exceptionParameterName;
 		long resultLimit = 0;
 		long startingRow = 0;
-		if(limit == "" || limit == null || Long.parseLong(limit) < 0) {
+		if(limit == null || limit.trim() == null || Long.parseLong(limit) < 0) {
 			exceptionParameterName = "limit";
 			throw new BankDetailsException(exceptionParameterName);
 		}
-		if(offset == "" || offset == null || Long.parseLong(offset) < 0) {
+		if(offset == null || offset.trim() == null || Long.parseLong(offset) < 0) {
 			exceptionParameterName = "offset";
 			throw new BankDetailsException(exceptionParameterName);
 		}
@@ -49,11 +49,11 @@ public class BankController {
 		String exceptionParameterName;
 		long resultLimit = 0;
 		long startingRow = 0;
-		if(limit == null || limit.strip() == "" || Long.parseLong(limit) < 0) {
+		if(limit == null || limit.trim() == "" || Long.parseLong(limit) < 0) {
 			exceptionParameterName = "limit";
 			throw new BankDetailsException(exceptionParameterName);
 		}
-		if(offset == null || offset.strip() == "" || Long.parseLong(offset) < 0) {
+		if(offset == null || offset.trim() == "" || Long.parseLong(offset) < 0) {
 			exceptionParameterName = "offset";
 			throw new BankDetailsException(exceptionParameterName);
 		}
